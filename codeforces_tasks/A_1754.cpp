@@ -1,0 +1,51 @@
+/*
+⣾⣿⠿⠿⠶⠿⢿⣿⣿⣿⣿⣦⣤⣄⢀⡅⢠⣾⣛⡉⠄⠄
+⢀⡋⣡⣴⣶⣶⡀⠄⠄⠙⢿⣿⣿⣿⣿⣿⣴⣿⣿⣿⢃⣤
+⢸⣇⠻⣿⣿⣿⣧⣀⢀⣠⡌⢻⣿⣿⣿⣿⣿⣿⣿⣿⣿⠿
+⢸⣿⣷⣤⣤⣤⣬⣙⣛⢿⣿⣿⣿⣿⣿⣿⡿⣿⣿⡍⠄⠄
+⣖⣿⣿⣿⣿⣿⣿⣿⣿⣿⢿⣿⣿⣿⣿⣿⢇⣿⣿⡷⠶⠶
+⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣽⣿⣿⣿⡇⣿⣿⣿⣿⣿⣿
+⢿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿
+⣦⣌⣛⣻⣿⣿⣧⠙⠛⠛⡭⠅⠒⠦⠭⣭⡻⣿⣿⣿⣿⣿
+⣿⣿⣿⣿⣿⣿⣿⡆⠄⠄⠄⠄⠄⠄⠄⠄⠹⠈⢋⣽⣿⣿
+⣿⣿⣿⣿⣿⣿⣿⣿⠄⣴⣿⣶⣄⠄⣴⣶⠄⢀⣾⣿⣿⣿
+⠈⠻⣿⣿⣿⣿⣿⣿⡄⢻⣿⣿⣿⠄⣿⣿⡀⣾⣿⣿⣿⣿
+⠄⠄⠄⠄⠄⠉⠻⣿⣿⣾⣦⡙⠻⣷⣾⣿⠃⠿⠋⠁⠄⠄
+⣿⣶⣶⣮⣥⣒⠲⢮⣝⡿⣿⣿⡆⣿⡿⠃⠄⠄⠄⠄⠄..
+*/
+
+// #pragma optimization_level 3
+// #pragma GCC optimize("Ofast,no-stack-protector")
+// #pragma GCC target("sse,sse2,sse3,ssse3,sse4,popcnt,abm,mmx,avx,avx2,tune=native")
+// #pragma GCC optimize("fast-math")
+// #pragma GCC optimize("unroll-loops"
+
+#define vi vector <long long>
+#define ll long long
+#define dd double
+#include <bits/stdc++.h>
+using namespace std;
+
+int main(){ 
+    ios::sync_with_stdio(false);
+    cin.tie(0), cout.tie(0);
+    ll t, n;
+    string s;
+    for(cin >> t; cin >> n >> s; cout << endl){
+        ll cnt = 0;
+        for(auto s : s) s == 'Q' ? ++cnt : s == 'A' && cnt > 0 ? --cnt : 0;
+        cout << (cnt > 0 ? "NO" : "YES");
+    }
+}
+//test
+// 5
+// 4
+// QQAA
+// 4
+// QQAQ
+// 3
+// QAA
+// 1
+// Q
+// 14
+// QAQQAQAAQQQAAA
